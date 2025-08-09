@@ -1,2 +1,2 @@
 # bpsurpriseme
-Small HTML application to surprise you with a random Beatport track
+Small Javascript project that surprises you with a random Beatport track
