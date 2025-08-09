@@ -9,8 +9,34 @@
     font-weight: bold;
     border-radius: 5px;
     display: block;
-    margin: auto;
     font-size: 16px;
+}
+
+
+.id-range > input, .id-range > button {
+    height: 100%;
+}
+
+
+.btn {
+    min-width: 35px;
+    background: #c4c4c4;
+    border: unset;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+.btns-tray-container {
+    display: flex;
+    width: fit-content;
+    margin: auto;
+    border-bottom: 1px solid #1bfd97;
+    padding: 15px;
+}
+
+.btns-tray-container > * {
+    margin-right: 5px;
 }
 
 

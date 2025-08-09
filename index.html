@@ -13,8 +13,12 @@
 
             <script>
 
+                var range_start = 1234;
+                var range_end = 10625808;
+
+
                 function createTrackID() {
-                    return Math.floor((Math.random() * 20625808) + 1); //20625808
+                    return Math.floor((Math.random() * range_end) + range_start); //20625808
                 }
 
                 function createEmbed(id) {
@@ -27,6 +31,7 @@
                     newEmbed.className = "bp-embed";
                     newEmbed.innerHTML = '<iframe src="https://embed.beatport.com/?id='+id+'&type=track" width="100%" height="162" frameborder="0" scrolling="no" style="max-width:600px;"></iframe>';
                     document.getElementById('page').append(newEmbed);
+
                 }
 
                 function surpriseMe() {
@@ -37,8 +42,55 @@
 
             </script>
 
-            <div class="btn-gen-container">
-                <button class="btn-gen">Surprise Me!</button>
+            <div>
+                <div class="btns-tray">
+                    <div class="btns-tray-container">
+                        <button class="btn-gen">Surprise Me!</button>
+
+                        <button class="btn btn-range-toggle">Range</button>
+                        <div class="id-range" style="display: none;">
+                            <input type="number" id="range-min">
+                            <input type="number" id="range-max">
+                            <button class="btn">✓</button>
+                        </div>
+
+                        <script>
+                            
+                            var btnRangeToggle = document.getElementsByClassName('btn-range-toggle');
+                            var rangeTogglePanel = document.getElementsByClassName('id-range')[0];
+                            var rangeTogglePanelOpen = false;
+
+                            if (btnRangeToggle[0]) {
+                                btnRangeToggle[0].addEventListener('click', function(){
+                                if (!rangeTogglePanelOpen) {
+                                    rangeTogglePanelOpen = true;
+                                    rangeTogglePanel.style.display = 'block';
+
+                                    document.getElementById('range-min').value = range_start;
+                                    document.getElementById('range-max').value = range_end;
+
+                                }
+                                else {
+                                    rangeTogglePanelOpen = false;
+                                    rangeTogglePanel.style.display = 'none';
+                                }
+                            })
+                            }
+                            
+                            var btnConfirmRange = document.querySelector('.id-range .btn');
+                            btnConfirmRange.addEventListener('click', function(){
+                                rangeTogglePanel.style.display = 'none';
+
+                                range_start = document.getElementById('range-min').value;
+                                range_end = document.getElementById('range-max').value;
+
+                            })
+                            
+                        </script>
+
+                    </div>
+                </div>
+                
             </div>
             <script>
                 var btnGen = document.getElementsByClassName('btn-gen')[0];
