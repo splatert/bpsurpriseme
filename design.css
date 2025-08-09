@@ -1,0 +1,41 @@
+
+
+
+
+.btn-gen {
+    padding: 10px;
+    background: #1bfd97;
+    border: 1px none gray;
+    font-weight: bold;
+    border-radius: 5px;
+    display: block;
+    margin: auto;
+    font-size: 16px;
+}
+
+
+.bp-embed {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.bp-embed > iframe {
+    border-radius: 15px;
+    border: 2px solid #fff;
+    box-shadow: 5px 5px white;
+}
+
+
+
+body {
+    background-color: #252525;
+}
+
+
+#page {
+    max-width: 1024px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 15% auto;
+  
+}
